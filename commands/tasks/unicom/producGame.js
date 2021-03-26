@@ -364,7 +364,7 @@ var producGame = {
     },
     doGameFlowTask: async (axios, options) => {
         let { popularList: allgames, jar } = await producGame.popularGames(axios, options)
-        games = allgames.filter(g => g.state === '0')
+        let games = allgames.filter(g => g.state === '0')
         console.info('剩余未完成game', games.length)
         let queue = new PQueue({ concurrency: 5 });
 
